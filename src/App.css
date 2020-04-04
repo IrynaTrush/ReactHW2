@@ -1,0 +1,19 @@
+.main {
+  background-color: #132639;
+  
+  padding: 100px 0;
+}
+
+.contactsList {
+background-color: #004d4d;
+border-radius: 10px;
+box-shadow: 5px 5px 15px #003333;
+height: 600px;
+max-width: 30%;
+margin: 0 auto;
+}
+
+.availableContacts{
+  position: relative;
+  top: 100px;
+}

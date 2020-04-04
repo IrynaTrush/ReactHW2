@@ -1,0 +1,77 @@
+.contactIcon {
+    font-size: 30px;
+    color: #80b3ff;
+    text-align: center;
+}
+
+.contactWrapper {
+    padding: 20px ;
+    position: relative;
+    top: 70px;
+}
+
+.contactItem {
+    display: flex;
+    background-color: #00264d;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.contactInfo {
+    margin-left: 15px;
+}
+
+.contactText {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #476b6b;
+    font-size: 14px;
+}
+
+.contactSpan {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #2d5986;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.search{
+    width: 300px;
+    position: absolute;
+    top: -20px;
+    left: 65px;
+    padding: 5px;
+}
+
+.icon {
+    font-size: 20px;
+    color: #1f2e2e;
+}
+
+.searchInput {
+    border: 2px solid #669999;
+   border-radius: 5px;
+   width: 80%;
+   margin-left: 10px;
+   padding: 5px;
+   background-color: #669999;
+   color: #141f1f;
+   font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.noAvailable {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #141f1f;
+    margin-top: 20px;
+}
+
+
+
+
