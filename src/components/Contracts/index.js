@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../Contracts/style.css'
+import '../Contracts/style.css';
+import Contact from "../contact"
 
 export default class Contracts extends Component {
 state = {
@@ -41,35 +42,35 @@ searchHandler = (e) => {
     this.setState({
         search: e.target.value
     })
-    console.log(this.state.search)
+    
 }
 render() {
     let contact = null;
-    const regex = new RegExp(this.state.search, 'g' )
-    contact = this.state.contacts.map(i => 
-        <div className="contactItem" key={i.firstName + 2}>
-        <div className="contactIcon" key={i.firstName + 3}>{i.gender === "male" ? <i className="fas fa-mars"></i> : <i className="fas fa-venus"></i>}</div>
-        <div className="contactInfo" key={i.firstName + 4}>
-        <p className="contactText" key={i.firstName + 1}><span className="contactSpan">First Name:</span>{i.firstName}</p>
-        <p className="contactText" key={i.lastName + 1}><span className="contactSpan">Last Name:</span>{i.lastName}</p>
-        <p className="contactText" key={i.phone + 1}><span className="contactSpan">Phone:</span>{i.phone}</p>
-        </div>
-        </div>
+ contact = this.state.contacts.map(i => 
+        <Contact
+                firstName={i.firstName}
+                lastName={i.lastName}
+                phone={i.phone}
+                gender={i.gender}
+                />
     )
-    let a = this.state.contacts.filter(item =>
-        regex.test(item.firstName.toLowerCase()) || regex.test(item.lastName.toLowerCase()) || regex.test(item.phone)
-    ) 
-          
+    
+    const a = this.state.contacts.filter(item => {
+      const search = this.state.search.toLowerCase();
+      return item.firstName.toLowerCase().includes(search) || 
+      item.lastName.toLowerCase().includes(search) || 
+      item.phone.includes(search)
+    })
+       
     if (this.state.search !== '') {
             contact = a.map(i => 
-                <div className="contactItem" key={i.firstName + 2}>
-                <div className="contactIcon" key={i.firstName + 3}>{i.gender === "male" ? <i className="fas fa-mars"></i> : <i className="fas fa-venus"></i>}</div>
-                <div className="contactInfo" key={i.firstName + 4}>
-                <p className="contactText" key={i.firstName + 1}><span className="contactSpan">First Name:</span>{i.firstName}</p>
-                <p className="contactText" key={i.lastName + 1}><span className="contactSpan">Last Name:</span>{i.lastName}</p>
-                <p className="contactText" key={i.phone + 1}><span className="contactSpan">Phone:</span>{i.phone}</p>
-                </div>
-                </div>)
+                <Contact
+                firstName={i.firstName}
+                lastName={i.lastName}
+                phone={i.phone}
+                gender={i.gender}
+                />
+            )
     }
 
     if (a.length === 0) {
@@ -82,7 +83,10 @@ render() {
                     <input className="searchInput" onChange={this.searchHandler}/>
                 </div>
                 {contact}
-           </div>
+            </div>
         )
     }
 }
+
+
+
