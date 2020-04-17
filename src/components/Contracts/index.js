@@ -45,35 +45,31 @@ searchHandler = (e) => {
     
 }
 render() {
-    let contact = null;
- contact = this.state.contacts.map(i => 
-        <Contact
-                firstName={i.firstName}
-                lastName={i.lastName}
-                phone={i.phone}
-                gender={i.gender}
-                />
-    )
-    
-    const a = this.state.contacts.filter(item => {
+    let contact = this.state.contacts;
+ 
+    const filteredContacts = this.state.contacts.filter(item => {
       const search = this.state.search.toLowerCase();
       return item.firstName.toLowerCase().includes(search) || 
       item.lastName.toLowerCase().includes(search) || 
       item.phone.includes(search)
+
     })
        
+    console.log(filteredContacts)
     if (this.state.search !== '') {
-            contact = a.map(i => 
-                <Contact
-                firstName={i.firstName}
-                lastName={i.lastName}
-                phone={i.phone}
-                gender={i.gender}
-                />
-            )
+            contact = filteredContacts;
     }
 
-    if (a.length === 0) {
+    contact = filteredContacts.map(i => 
+        <Contact
+        firstName={i.firstName}
+        lastName={i.lastName}
+        phone={i.phone}
+        gender={i.gender}
+        />
+    )
+
+    if (filteredContacts.length === 0) {
         contact = <div className="noAvailable">No available contacts</div>
     }
         return(

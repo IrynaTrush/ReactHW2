@@ -1,0 +1,26 @@
+.contactIcon {
+    font-size: 30px;
+    color: #80b3ff;
+    text-align: center;
+}
+
+.contactItem {
+    display: flex;
+    background-color: #00264d;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.contactInfo {
+    margin-left: 15px;
+}
+
+.contactText {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #476b6b;
+    font-size: 14px;
+}
