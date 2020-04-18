@@ -55,7 +55,6 @@ render() {
 
     })
        
-    console.log(filteredContacts)
     if (this.state.search !== '') {
             contact = filteredContacts;
     }
@@ -66,6 +65,7 @@ render() {
         lastName={i.lastName}
         phone={i.phone}
         gender={i.gender}
+        key={i + Math.random()}
         />
     )
 
